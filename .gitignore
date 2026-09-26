@@ -3,6 +3,7 @@ recordings/
 recordings_encrypted/
 *.mp4
 *.mkv
+*.h264
 *.7z
 
 # Backup of old scripts / units copied off the Pi
