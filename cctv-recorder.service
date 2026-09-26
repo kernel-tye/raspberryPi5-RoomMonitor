@@ -1,0 +1,16 @@
+[Unit]
+Description=24/7 CCTV recorder with IMX500 person detection
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+EnvironmentFile=-/home/pi/cctv/cctv.env
+WorkingDirectory=/home/pi
+ExecStart=/usr/bin/python3 /home/pi/cctv_recorder.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Upload CCTV recordings to Baidu Netdisk
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=pi
+EnvironmentFile=-/home/pi/cctv/cctv.env
+ExecStart=/usr/bin/python3 /home/pi/cctv_baidu_sync.py
+TimeoutStartSec=2h
+Nice=10
+IOSchedulingClass=idle

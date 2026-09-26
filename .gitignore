@@ -1,0 +1,27 @@
+# Footage (plain and encrypted) — never commit
+recordings/
+recordings_encrypted/
+*.mp4
+*.mkv
+*.7z
+
+# Backup of old scripts / units copied off the Pi
+pi_backup/
+
+# Secrets and runtime state that live in ~/cctv on the Pi
+web_password
+web_secret
+archive_password
+upload_limit
+*.bak-*
+
+__pycache__/
+*.pyc
+.push_tmp/
+
+# Local staging folder for old footage being pushed to the Pi
+新建文件夹/
+
+# Personal ops notes (hosts, checklist) - never publish
+README.private.md
+cctv.env

@@ -1,0 +1,15 @@
+[Unit]
+Description=CCTV web viewer (Tailscale only)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+User=pi
+EnvironmentFile=-/home/pi/cctv/cctv.env
+WorkingDirectory=/home/pi
+ExecStart=/usr/bin/python3 /home/pi/cctv_web.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
